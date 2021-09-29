@@ -77,4 +77,27 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    //<<<<<<<<<<<<<<<<<<<<<<<ORDER-TOTAL>>>>>>>>>>>>>>>>>>>>>>
+
+    @Test //FAILING TEST CASE
+    public void items_selected_should_return_total_value(){
+        List<String> itemsSelected = new ArrayList<String>();
+        itemsSelected.add("Sweet corn soup");
+        itemsSelected.add("Vegetable lasagne");
+        assertEquals(119+269,restaurant.OrderTotal(itemsSelected));
+    }
+    @Test //FAILING TEST CASE
+    public void items_selected_should_return_total_value_of_selected_items_only_after_removing_one_or_more_items(){
+        List<String> itemsSelected = new ArrayList<String>();
+        itemsSelected.add("Vegetable lasagne");
+        assertEquals(269,restaurant.OrderTotal(itemsSelected));
+    }
+    @Test //FAILING TEST CASE
+    public void if_nothing_is_selected_it_should_return_total_as_zero(){
+        List<String> itemsSelected = new ArrayList<String>();
+        assertEquals(0,restaurant.OrderTotal(itemsSelected));
+    }
+    //<<<<<<<<<<<<<<<<<<<<<<<ORDER-TOTAL>>>>>>>>>>>>>>>>>>>>>>
+
+
 }
