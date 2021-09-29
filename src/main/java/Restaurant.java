@@ -66,6 +66,16 @@ public class Restaurant {
 
     }
 
+    // Method Implementation for calculating order value, thus enabling failed test cases to now pass
+    public int OrderTotal(List<String> itemsSelected){
+        int total = 0;
+        for (String itemSelected : itemsSelected){
+            total =total + findItemByName(itemSelected).getPrice();
+        }
+        return total;
+    }
+
+
     public String getName() {
         return name;
     }

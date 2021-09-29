@@ -1,5 +1,10 @@
 public class Item {
     private String name;
+
+    public int getPrice() {
+        return price;
+    } //getter to fetch price variable
+
     private int price;
 
     public Item(String name, int price) {
